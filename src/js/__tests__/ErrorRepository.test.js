@@ -30,10 +30,5 @@ test('addToStorage - more errors', () => {
   errRep.addToStorage(1, 'First error');
   errRep.addToStorage(2, 'Second error');
   errRep.addToStorage(3, 'Third error');
-  expect(Array.from(errRep.errorStorage)).toEqual([[1, 'First error'], [2, 'Second error'], [3, 'Third error']]);
+  expect(errRep.errorStorage).toEqual(new Map([[1, 'First error'], [2, 'Second error'], [3, 'Third error']]));
 });
-
-// Не придумал как проверить данные внутри иначе, чем через массив.
-// Пробовал через errRep.errorStorage.entries(), пробовал keys().
-// Разобрался с errRep.errorStorage.entries().next().value, но это тоже не помогло.
-// Как-то можно провести последний тест получше?
